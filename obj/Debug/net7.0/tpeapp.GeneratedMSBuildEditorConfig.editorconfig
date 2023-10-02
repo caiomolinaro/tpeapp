@@ -16,12 +16,132 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\cmoli\OneDrive\Área de Trabalho\DEV\PROJETOS\tpeapp
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/CircuitosTeste/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2lyY3VpdG9zVGVzdGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/CircuitosTeste/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2lyY3VpdG9zVGVzdGVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/CircuitosTeste/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2lyY3VpdG9zVGVzdGVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/CircuitosTeste/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2lyY3VpdG9zVGVzdGVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/CircuitosTeste/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2lyY3VpdG9zVGVzdGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/CongregacoesTeste/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZ3JlZ2Fjb2VzVGVzdGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/CongregacoesTeste/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZ3JlZ2Fjb2VzVGVzdGVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/CongregacoesTeste/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZ3JlZ2Fjb2VzVGVzdGVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/CongregacoesTeste/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZ3JlZ2Fjb2VzVGVzdGVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/CongregacoesTeste/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZ3JlZ2Fjb2VzVGVzdGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/DiasSemanas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlhc1NlbWFuYXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/DiasSemanas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlhc1NlbWFuYXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/DiasSemanas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlhc1NlbWFuYXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/DiasSemanas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlhc1NlbWFuYXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/DiasSemanas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlhc1NlbWFuYXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/Home/PontosView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQb250b3NWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/Horarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/Horarios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/Horarios/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/Horarios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/Horarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/PontosTeste/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9udG9zVGVzdGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/PontosTeste/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9udG9zVGVzdGVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/PontosTeste/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9udG9zVGVzdGVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/PontosTeste/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9udG9zVGVzdGVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/PontosTeste/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9udG9zVGVzdGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/PrivilegiosTeste/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpdmlsZWdpb3NUZXN0ZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/PrivilegiosTeste/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpdmlsZWdpb3NUZXN0ZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/PrivilegiosTeste/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpdmlsZWdpb3NUZXN0ZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/PrivilegiosTeste/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpdmlsZWdpb3NUZXN0ZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/PrivilegiosTeste/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpdmlsZWdpb3NUZXN0ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/cmoli/OneDrive/Área de Trabalho/DEV/PROJETOS/tpeapp/Views/Shared/_ValidationScriptsPartial.cshtml]
