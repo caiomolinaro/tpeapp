@@ -15,10 +15,13 @@ namespace tpeapp.Controllers
 
         public IActionResult Index()
         {
+            DateTime dataHoraAtual = DateTime.Now;
+            ViewBag.DataHoraAtual = dataHoraAtual;
+
             return View();
         }
 
-        public IActionResult PontosView()
+        public IActionResult PointsCarouselView()
         {
             return View();
         }

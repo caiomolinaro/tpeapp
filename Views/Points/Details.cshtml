@@ -1,0 +1,24 @@
+﻿@model tpeapp.Models.PointsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>PointsModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PointName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PointName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.PointId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
