@@ -22,10 +22,5 @@ namespace tpeapp.Controllers
         {
             return View();
         }
-
-        public IActionResult Contato()
-        {
-            return View();
-        }
     }
 }

@@ -20,7 +20,8 @@ namespace tpeapp.Models
         [Display(Name = "Mulher")]
         public bool isMulher {  get; set; }
 
-        //public DateTime UsuarioDataNascimento { get; set; }
+        //[Display(Name = "Data de Nascimento")]
+        //public DateOnly UsuarioDataNascimento { get; set; }
 
         [Required(ErrorMessage = "Por favor digite o número de telefone do irmão ou da irmã")]
         [StringLength(11, ErrorMessage = "O número de telefone deve conter 11 caracteres e no formato 11922233333")]

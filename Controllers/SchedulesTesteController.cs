@@ -10,22 +10,22 @@ using tpeapp.Models;
 
 namespace tpeapp.Controllers
 {
-    public class HorariosController : Controller
+    public class SchedulesTesteController : Controller
     {
         private readonly AppDbContext _context;
 
-        public HorariosController(AppDbContext context)
+        public SchedulesTesteController(AppDbContext context)
         {
             _context = context;
         }
 
-        // GET: Horarios
+        // GET: SchedulesTeste
         public async Task<IActionResult> Index()
         {
               return View(await _context.Horarios.ToListAsync());
         }
 
-        // GET: Horarios/Details/5
+        // GET: SchedulesTeste/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Horarios == null)
@@ -33,39 +33,39 @@ namespace tpeapp.Controllers
                 return NotFound();
             }
 
-            var horarios = await _context.Horarios
+            var schedules = await _context.Horarios
                 .FirstOrDefaultAsync(m => m.HorariosId == id);
-            if (horarios == null)
+            if (schedules == null)
             {
                 return NotFound();
             }
 
-            return View(horarios);
+            return View(schedules);
         }
 
-        // GET: Horarios/Create
+        // GET: SchedulesTeste/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Horarios/Create
+        // POST: SchedulesTeste/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("HorariosId")] Horarios horarios)
+        public async Task<IActionResult> Create([Bind("HorariosId,TimeName")] Schedules schedules)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(horarios);
+                _context.Add(schedules);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(horarios);
+            return View(schedules);
         }
 
-        // GET: Horarios/Edit/5
+        // GET: SchedulesTeste/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Horarios == null)
@@ -73,22 +73,22 @@ namespace tpeapp.Controllers
                 return NotFound();
             }
 
-            var horarios = await _context.Horarios.FindAsync(id);
-            if (horarios == null)
+            var schedules = await _context.Horarios.FindAsync(id);
+            if (schedules == null)
             {
                 return NotFound();
             }
-            return View(horarios);
+            return View(schedules);
         }
 
-        // POST: Horarios/Edit/5
+        // POST: SchedulesTeste/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("HorariosId")] Horarios horarios)
+        public async Task<IActionResult> Edit(int id, [Bind("HorariosId,TimeName")] Schedules schedules)
         {
-            if (id != horarios.HorariosId)
+            if (id != schedules.HorariosId)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace tpeapp.Controllers
             {
                 try
                 {
-                    _context.Update(horarios);
+                    _context.Update(schedules);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!HorariosExists(horarios.HorariosId))
+                    if (!SchedulesExists(schedules.HorariosId))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace tpeapp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(horarios);
+            return View(schedules);
         }
 
-        // GET: Horarios/Delete/5
+        // GET: SchedulesTeste/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Horarios == null)
@@ -124,17 +124,17 @@ namespace tpeapp.Controllers
                 return NotFound();
             }
 
-            var horarios = await _context.Horarios
+            var schedules = await _context.Horarios
                 .FirstOrDefaultAsync(m => m.HorariosId == id);
-            if (horarios == null)
+            if (schedules == null)
             {
                 return NotFound();
             }
 
-            return View(horarios);
+            return View(schedules);
         }
 
-        // POST: Horarios/Delete/5
+        // POST: SchedulesTeste/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -143,17 +143,17 @@ namespace tpeapp.Controllers
             {
                 return Problem("Entity set 'AppDbContext.Horarios'  is null.");
             }
-            var horarios = await _context.Horarios.FindAsync(id);
-            if (horarios != null)
+            var schedules = await _context.Horarios.FindAsync(id);
+            if (schedules != null)
             {
-                _context.Horarios.Remove(horarios);
+                _context.Horarios.Remove(schedules);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool HorariosExists(int id)
+        private bool SchedulesExists(int id)
         {
           return _context.Horarios.Any(e => e.HorariosId == id);
         }
