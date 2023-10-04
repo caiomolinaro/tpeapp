@@ -22,18 +22,18 @@ namespace tpeapp.Controllers
         // GET: Circuits
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Circuitos.ToListAsync());
+              return View(await _context.Circuits.ToListAsync());
         }
 
         // GET: Circuits/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Circuitos == null)
+            if (id == null || _context.Circuits == null)
             {
                 return NotFound();
             }
 
-            var circuitsModel = await _context.Circuitos
+            var circuitsModel = await _context.Circuits
                 .FirstOrDefaultAsync(m => m.CircuitId == id);
             if (circuitsModel == null)
             {
@@ -68,12 +68,12 @@ namespace tpeapp.Controllers
         // GET: Circuits/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Circuitos == null)
+            if (id == null || _context.Circuits == null)
             {
                 return NotFound();
             }
 
-            var circuitsModel = await _context.Circuitos.FindAsync(id);
+            var circuitsModel = await _context.Circuits.FindAsync(id);
             if (circuitsModel == null)
             {
                 return NotFound();
@@ -119,12 +119,12 @@ namespace tpeapp.Controllers
         // GET: Circuits/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Circuitos == null)
+            if (id == null || _context.Circuits == null)
             {
                 return NotFound();
             }
 
-            var circuitsModel = await _context.Circuitos
+            var circuitsModel = await _context.Circuits
                 .FirstOrDefaultAsync(m => m.CircuitId == id);
             if (circuitsModel == null)
             {
@@ -139,14 +139,14 @@ namespace tpeapp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Circuitos == null)
+            if (_context.Circuits == null)
             {
-                return Problem("Entity set 'AppDbContext.Circuitos'  is null.");
+                return Problem("Entity set 'AppDbContext.Circuits'  is null.");
             }
-            var circuitsModel = await _context.Circuitos.FindAsync(id);
+            var circuitsModel = await _context.Circuits.FindAsync(id);
             if (circuitsModel != null)
             {
-                _context.Circuitos.Remove(circuitsModel);
+                _context.Circuits.Remove(circuitsModel);
             }
             
             await _context.SaveChangesAsync();
@@ -155,7 +155,7 @@ namespace tpeapp.Controllers
 
         private bool CircuitsModelExists(int id)
         {
-          return _context.Circuitos.Any(e => e.CircuitId == id);
+          return _context.Circuits.Any(e => e.CircuitId == id);
         }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using tpeapp.Context;
 
@@ -11,9 +12,11 @@ using tpeapp.Context;
 namespace tpeapp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231004225700_migracaocircuit1")]
+    partial class migracaocircuit1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,7 +38,7 @@ namespace tpeapp.Migrations
 
                     b.HasKey("CircuitId");
 
-                    b.ToTable("Circuits");
+                    b.ToTable("CircuitsName");
                 });
 
             modelBuilder.Entity("tpeapp.Models.CongregationsModel", b =>
@@ -59,7 +62,7 @@ namespace tpeapp.Migrations
 
                     b.HasIndex("CircuitsCircuitId");
 
-                    b.ToTable("Congregations");
+                    b.ToTable("CongregationsName");
                 });
 
             modelBuilder.Entity("tpeapp.Models.PointsModel", b =>

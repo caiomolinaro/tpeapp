@@ -22,18 +22,18 @@ namespace tpeapp.Controllers
         // GET: Points
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Pontos.ToListAsync());
+              return View(await _context.Points.ToListAsync());
         }
 
         // GET: Points/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Pontos == null)
+            if (id == null || _context.Points == null)
             {
                 return NotFound();
             }
 
-            var pointsModel = await _context.Pontos
+            var pointsModel = await _context.Points
                 .FirstOrDefaultAsync(m => m.PointId == id);
             if (pointsModel == null)
             {
@@ -68,12 +68,12 @@ namespace tpeapp.Controllers
         // GET: Points/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Pontos == null)
+            if (id == null || _context.Points == null)
             {
                 return NotFound();
             }
 
-            var pointsModel = await _context.Pontos.FindAsync(id);
+            var pointsModel = await _context.Points.FindAsync(id);
             if (pointsModel == null)
             {
                 return NotFound();
@@ -119,12 +119,12 @@ namespace tpeapp.Controllers
         // GET: Points/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Pontos == null)
+            if (id == null || _context.Points == null)
             {
                 return NotFound();
             }
 
-            var pointsModel = await _context.Pontos
+            var pointsModel = await _context.Points
                 .FirstOrDefaultAsync(m => m.PointId == id);
             if (pointsModel == null)
             {
@@ -139,14 +139,14 @@ namespace tpeapp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Pontos == null)
+            if (_context.Points == null)
             {
                 return Problem("Entity set 'AppDbContext.Pontos'  is null.");
             }
-            var pointsModel = await _context.Pontos.FindAsync(id);
+            var pointsModel = await _context.Points.FindAsync(id);
             if (pointsModel != null)
             {
-                _context.Pontos.Remove(pointsModel);
+                _context.Points.Remove(pointsModel);
             }
             
             await _context.SaveChangesAsync();
@@ -155,7 +155,7 @@ namespace tpeapp.Controllers
 
         private bool PointsModelExists(int id)
         {
-          return _context.Pontos.Any(e => e.PointId == id);
+          return _context.Points.Any(e => e.PointId == id);
         }
     }
 }

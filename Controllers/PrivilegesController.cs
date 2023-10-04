@@ -22,18 +22,18 @@ namespace tpeapp.Controllers
         // GET: Privileges
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Privilegios.ToListAsync());
+              return View(await _context.Privileges.ToListAsync());
         }
 
         // GET: Privileges/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Privilegios == null)
+            if (id == null || _context.Privileges == null)
             {
                 return NotFound();
             }
 
-            var privilegesModel = await _context.Privilegios
+            var privilegesModel = await _context.Privileges
                 .FirstOrDefaultAsync(m => m.PrivilegesId == id);
             if (privilegesModel == null)
             {
@@ -68,12 +68,12 @@ namespace tpeapp.Controllers
         // GET: Privileges/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Privilegios == null)
+            if (id == null || _context.Privileges == null)
             {
                 return NotFound();
             }
 
-            var privilegesModel = await _context.Privilegios.FindAsync(id);
+            var privilegesModel = await _context.Privileges.FindAsync(id);
             if (privilegesModel == null)
             {
                 return NotFound();
@@ -119,12 +119,12 @@ namespace tpeapp.Controllers
         // GET: Privileges/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Privilegios == null)
+            if (id == null || _context.Privileges == null)
             {
                 return NotFound();
             }
 
-            var privilegesModel = await _context.Privilegios
+            var privilegesModel = await _context.Privileges
                 .FirstOrDefaultAsync(m => m.PrivilegesId == id);
             if (privilegesModel == null)
             {
@@ -139,14 +139,14 @@ namespace tpeapp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Privilegios == null)
+            if (_context.Privileges == null)
             {
                 return Problem("Entity set 'AppDbContext.Privilegios'  is null.");
             }
-            var privilegesModel = await _context.Privilegios.FindAsync(id);
+            var privilegesModel = await _context.Privileges.FindAsync(id);
             if (privilegesModel != null)
             {
-                _context.Privilegios.Remove(privilegesModel);
+                _context.Privileges.Remove(privilegesModel);
             }
             
             await _context.SaveChangesAsync();
@@ -155,7 +155,7 @@ namespace tpeapp.Controllers
 
         private bool PrivilegesModelExists(int id)
         {
-          return _context.Privilegios.Any(e => e.PrivilegesId == id);
+          return _context.Privileges.Any(e => e.PrivilegesId == id);
         }
     }
 }

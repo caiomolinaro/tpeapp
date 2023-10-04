@@ -22,18 +22,18 @@ namespace tpeapp.Controllers
         // GET: Congregations
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Congregacoes.ToListAsync());
+              return View(await _context.Congregations.ToListAsync());
         }
 
         // GET: Congregations/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Congregacoes == null)
+            if (id == null || _context.Congregations == null)
             {
                 return NotFound();
             }
 
-            var congregationsModel = await _context.Congregacoes
+            var congregationsModel = await _context.Congregations
                 .FirstOrDefaultAsync(m => m.CongregationId == id);
             if (congregationsModel == null)
             {
@@ -54,7 +54,7 @@ namespace tpeapp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CongregationId,CongregationName")] CongregationsModel congregationsModel)
+        public async Task<IActionResult> Create([Bind("CongregationId,CongregationName,CircuitId")] CongregationsModel congregationsModel)
         {
             if (ModelState.IsValid)
             {
@@ -68,12 +68,12 @@ namespace tpeapp.Controllers
         // GET: Congregations/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Congregacoes == null)
+            if (id == null || _context.Congregations == null)
             {
                 return NotFound();
             }
 
-            var congregationsModel = await _context.Congregacoes.FindAsync(id);
+            var congregationsModel = await _context.Congregations.FindAsync(id);
             if (congregationsModel == null)
             {
                 return NotFound();
@@ -86,7 +86,7 @@ namespace tpeapp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CongregationId,CongregationName")] CongregationsModel congregationsModel)
+        public async Task<IActionResult> Edit(int id, [Bind("CongregationId,CongregationName,CircuitId")] CongregationsModel congregationsModel)
         {
             if (id != congregationsModel.CongregationId)
             {
@@ -119,12 +119,12 @@ namespace tpeapp.Controllers
         // GET: Congregations/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Congregacoes == null)
+            if (id == null || _context.Congregations == null)
             {
                 return NotFound();
             }
 
-            var congregationsModel = await _context.Congregacoes
+            var congregationsModel = await _context.Congregations
                 .FirstOrDefaultAsync(m => m.CongregationId == id);
             if (congregationsModel == null)
             {
@@ -139,14 +139,14 @@ namespace tpeapp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Congregacoes == null)
+            if (_context.Congregations == null)
             {
-                return Problem("Entity set 'AppDbContext.Congregacoes'  is null.");
+                return Problem("Entity set 'AppDbContext.Congregations'  is null.");
             }
-            var congregationsModel = await _context.Congregacoes.FindAsync(id);
+            var congregationsModel = await _context.Congregations.FindAsync(id);
             if (congregationsModel != null)
             {
-                _context.Congregacoes.Remove(congregationsModel);
+                _context.Congregations.Remove(congregationsModel);
             }
             
             await _context.SaveChangesAsync();
@@ -155,7 +155,7 @@ namespace tpeapp.Controllers
 
         private bool CongregationsModelExists(int id)
         {
-          return _context.Congregacoes.Any(e => e.CongregationId == id);
+          return _context.Congregations.Any(e => e.CongregationId == id);
         }
     }
 }

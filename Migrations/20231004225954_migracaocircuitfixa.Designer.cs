@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using tpeapp.Context;
 
@@ -11,9 +12,11 @@ using tpeapp.Context;
 namespace tpeapp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231004225954_migracaocircuitfixa")]
+    partial class migracaocircuitfixa
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,40 +27,28 @@ namespace tpeapp.Migrations
 
             modelBuilder.Entity("tpeapp.Models.CircuitsModel", b =>
                 {
-                    b.Property<int>("CircuitId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CircuitId"));
-
                     b.Property<string>("CircuitName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("CircuitId");
+                    b.HasKey("CircuitName");
 
                     b.ToTable("Circuits");
                 });
 
             modelBuilder.Entity("tpeapp.Models.CongregationsModel", b =>
                 {
-                    b.Property<int>("CongregationId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CongregationId"));
+                    b.Property<string>("CongregationName")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("CircuitId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CircuitsCircuitId")
-                        .HasColumnType("int");
+                    b.Property<string>("CircuitsCircuitName")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CongregationName")
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("CongregationName");
 
-                    b.HasKey("CongregationId");
-
-                    b.HasIndex("CircuitsCircuitId");
+                    b.HasIndex("CircuitsCircuitName");
 
                     b.ToTable("Congregations");
                 });
@@ -200,7 +191,7 @@ namespace tpeapp.Migrations
                 {
                     b.HasOne("tpeapp.Models.CircuitsModel", "Circuits")
                         .WithMany("Congregations")
-                        .HasForeignKey("CircuitsCircuitId");
+                        .HasForeignKey("CircuitsCircuitName");
 
                     b.Navigation("Circuits");
                 });

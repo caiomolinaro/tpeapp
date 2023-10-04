@@ -10,13 +10,13 @@ namespace tpeapp.Context
         {
         }
 
-        public DbSet<UsersModel> Usuarios { get; set; }
-        public DbSet<WeekDaysModel> DiasSemana { get; set; }
-        public DbSet<PrivilegesModel> Privilegios { get; set; }
-        public DbSet<SchedulesModel> Horarios { get; set; }
-        public DbSet<PointsModel> Pontos { get; set; }
-        public DbSet<CircuitsModel> Circuitos { get; set; }
-        public DbSet<CongregationsModel> Congregacoes { get; set; }
+        public DbSet<UsersModel> Users { get; set; }
+        public DbSet<WeekDaysModel> WeekDays { get; set; }
+        public DbSet<PrivilegesModel> Privileges { get; set; }
+        public DbSet<SchedulesModel> Hours { get; set; }
+        public DbSet<PointsModel> Points { get; set; }
+        public DbSet<CircuitsModel> Circuits { get; set; }
+        public DbSet<CongregationsModel> Congregations { get; set; }
 
 
     }

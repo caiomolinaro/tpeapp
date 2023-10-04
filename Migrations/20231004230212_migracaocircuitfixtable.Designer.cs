@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using tpeapp.Context;
 
@@ -11,9 +12,11 @@ using tpeapp.Context;
 namespace tpeapp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231004230212_migracaocircuitfixtable")]
+    partial class migracaocircuitfixtable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,46 +24,6 @@ namespace tpeapp.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("tpeapp.Models.CircuitsModel", b =>
-                {
-                    b.Property<int>("CircuitId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CircuitId"));
-
-                    b.Property<string>("CircuitName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("CircuitId");
-
-                    b.ToTable("Circuits");
-                });
-
-            modelBuilder.Entity("tpeapp.Models.CongregationsModel", b =>
-                {
-                    b.Property<int>("CongregationId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CongregationId"));
-
-                    b.Property<int>("CircuitId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CircuitsCircuitId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CongregationName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("CongregationId");
-
-                    b.HasIndex("CircuitsCircuitId");
-
-                    b.ToTable("Congregations");
-                });
 
             modelBuilder.Entity("tpeapp.Models.PointsModel", b =>
                 {
@@ -194,20 +157,6 @@ namespace tpeapp.Migrations
                     b.HasKey("WeekDayId");
 
                     b.ToTable("WeekDays");
-                });
-
-            modelBuilder.Entity("tpeapp.Models.CongregationsModel", b =>
-                {
-                    b.HasOne("tpeapp.Models.CircuitsModel", "Circuits")
-                        .WithMany("Congregations")
-                        .HasForeignKey("CircuitsCircuitId");
-
-                    b.Navigation("Circuits");
-                });
-
-            modelBuilder.Entity("tpeapp.Models.CircuitsModel", b =>
-                {
-                    b.Navigation("Congregations");
                 });
 #pragma warning restore 612, 618
         }

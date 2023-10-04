@@ -22,18 +22,18 @@ namespace tpeapp.Controllers
         // GET: Schedules
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Horarios.ToListAsync());
+              return View(await _context.Hours.ToListAsync());
         }
 
         // GET: Schedules/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Horarios == null)
+            if (id == null || _context.Hours == null)
             {
                 return NotFound();
             }
 
-            var schedulesModel = await _context.Horarios
+            var schedulesModel = await _context.Hours
                 .FirstOrDefaultAsync(m => m.SchedulesId == id);
             if (schedulesModel == null)
             {
@@ -68,12 +68,12 @@ namespace tpeapp.Controllers
         // GET: Schedules/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Horarios == null)
+            if (id == null || _context.Hours == null)
             {
                 return NotFound();
             }
 
-            var schedulesModel = await _context.Horarios.FindAsync(id);
+            var schedulesModel = await _context.Hours.FindAsync(id);
             if (schedulesModel == null)
             {
                 return NotFound();
@@ -119,12 +119,12 @@ namespace tpeapp.Controllers
         // GET: Schedules/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Horarios == null)
+            if (id == null || _context.Hours == null)
             {
                 return NotFound();
             }
 
-            var schedulesModel = await _context.Horarios
+            var schedulesModel = await _context.Hours
                 .FirstOrDefaultAsync(m => m.SchedulesId == id);
             if (schedulesModel == null)
             {
@@ -139,14 +139,14 @@ namespace tpeapp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Horarios == null)
+            if (_context.Hours == null)
             {
                 return Problem("Entity set 'AppDbContext.Horarios'  is null.");
             }
-            var schedulesModel = await _context.Horarios.FindAsync(id);
+            var schedulesModel = await _context.Hours.FindAsync(id);
             if (schedulesModel != null)
             {
-                _context.Horarios.Remove(schedulesModel);
+                _context.Hours.Remove(schedulesModel);
             }
             
             await _context.SaveChangesAsync();
@@ -155,7 +155,7 @@ namespace tpeapp.Controllers
 
         private bool SchedulesModelExists(int id)
         {
-          return _context.Horarios.Any(e => e.SchedulesId == id);
+          return _context.Hours.Any(e => e.SchedulesId == id);
         }
     }
 }

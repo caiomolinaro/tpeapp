@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using tpeapp.Context;
 
@@ -11,9 +12,11 @@ using tpeapp.Context;
 namespace tpeapp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231004231602_last04102023_a")]
+    partial class last04102023_a
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -199,15 +202,10 @@ namespace tpeapp.Migrations
             modelBuilder.Entity("tpeapp.Models.CongregationsModel", b =>
                 {
                     b.HasOne("tpeapp.Models.CircuitsModel", "Circuits")
-                        .WithMany("Congregations")
+                        .WithMany()
                         .HasForeignKey("CircuitsCircuitId");
 
                     b.Navigation("Circuits");
-                });
-
-            modelBuilder.Entity("tpeapp.Models.CircuitsModel", b =>
-                {
-                    b.Navigation("Congregations");
                 });
 #pragma warning restore 612, 618
         }

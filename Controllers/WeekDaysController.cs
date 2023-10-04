@@ -22,18 +22,18 @@ namespace tpeapp.Controllers
         // GET: WeekDays
         public async Task<IActionResult> Index()
         {
-              return View(await _context.DiasSemana.ToListAsync());
+              return View(await _context.WeekDays.ToListAsync());
         }
 
         // GET: WeekDays/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.DiasSemana == null)
+            if (id == null || _context.WeekDays == null)
             {
                 return NotFound();
             }
 
-            var weekDaysModel = await _context.DiasSemana
+            var weekDaysModel = await _context.WeekDays
                 .FirstOrDefaultAsync(m => m.WeekDayId == id);
             if (weekDaysModel == null)
             {
@@ -68,12 +68,12 @@ namespace tpeapp.Controllers
         // GET: WeekDays/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.DiasSemana == null)
+            if (id == null || _context.WeekDays == null)
             {
                 return NotFound();
             }
 
-            var weekDaysModel = await _context.DiasSemana.FindAsync(id);
+            var weekDaysModel = await _context.WeekDays.FindAsync(id);
             if (weekDaysModel == null)
             {
                 return NotFound();
@@ -119,12 +119,12 @@ namespace tpeapp.Controllers
         // GET: WeekDays/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.DiasSemana == null)
+            if (id == null || _context.WeekDays == null)
             {
                 return NotFound();
             }
 
-            var weekDaysModel = await _context.DiasSemana
+            var weekDaysModel = await _context.WeekDays
                 .FirstOrDefaultAsync(m => m.WeekDayId == id);
             if (weekDaysModel == null)
             {
@@ -139,14 +139,14 @@ namespace tpeapp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.DiasSemana == null)
+            if (_context.WeekDays == null)
             {
                 return Problem("Entity set 'AppDbContext.DiasSemana'  is null.");
             }
-            var weekDaysModel = await _context.DiasSemana.FindAsync(id);
+            var weekDaysModel = await _context.WeekDays.FindAsync(id);
             if (weekDaysModel != null)
             {
-                _context.DiasSemana.Remove(weekDaysModel);
+                _context.WeekDays.Remove(weekDaysModel);
             }
             
             await _context.SaveChangesAsync();
@@ -155,7 +155,7 @@ namespace tpeapp.Controllers
 
         private bool WeekDaysModelExists(int id)
         {
-          return _context.DiasSemana.Any(e => e.WeekDayId == id);
+          return _context.WeekDays.Any(e => e.WeekDayId == id);
         }
     }
 }

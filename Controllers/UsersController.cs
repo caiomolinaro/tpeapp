@@ -22,18 +22,18 @@ namespace tpeapp.Controllers
         // GET: Users
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Usuarios.ToListAsync());
+              return View(await _context.Users.ToListAsync());
         }
 
         // GET: Users/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Usuarios == null)
+            if (id == null || _context.Users == null)
             {
                 return NotFound();
             }
 
-            var usersModel = await _context.Usuarios
+            var usersModel = await _context.Users
                 .FirstOrDefaultAsync(m => m.UserId == id);
             if (usersModel == null)
             {
@@ -68,12 +68,12 @@ namespace tpeapp.Controllers
         // GET: Users/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Usuarios == null)
+            if (id == null || _context.Users == null)
             {
                 return NotFound();
             }
 
-            var usersModel = await _context.Usuarios.FindAsync(id);
+            var usersModel = await _context.Users.FindAsync(id);
             if (usersModel == null)
             {
                 return NotFound();
@@ -119,12 +119,12 @@ namespace tpeapp.Controllers
         // GET: Users/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Usuarios == null)
+            if (id == null || _context.Users == null)
             {
                 return NotFound();
             }
 
-            var usersModel = await _context.Usuarios
+            var usersModel = await _context.Users
                 .FirstOrDefaultAsync(m => m.UserId == id);
             if (usersModel == null)
             {
@@ -139,14 +139,14 @@ namespace tpeapp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Usuarios == null)
+            if (_context.Users == null)
             {
                 return Problem("Entity set 'AppDbContext.Usuarios'  is null.");
             }
-            var usersModel = await _context.Usuarios.FindAsync(id);
+            var usersModel = await _context.Users.FindAsync(id);
             if (usersModel != null)
             {
-                _context.Usuarios.Remove(usersModel);
+                _context.Users.Remove(usersModel);
             }
             
             await _context.SaveChangesAsync();
@@ -155,7 +155,7 @@ namespace tpeapp.Controllers
 
         private bool UsersModelExists(int id)
         {
-          return _context.Usuarios.Any(e => e.UserId == id);
+          return _context.Users.Any(e => e.UserId == id);
         }
     }
 }
