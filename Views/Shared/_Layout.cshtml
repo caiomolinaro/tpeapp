@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -18,15 +19,40 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex">
-                <a class="nav-link text-light" asp-area="" asp-controller="Users" asp-action="Index">Usuários</a>
-                <a class="nav-link text-light" asp-area="" asp-controller="Privileges" asp-action="Index">Privilégios</a>
-                <a class="nav-link text-light" asp-area="" asp-controller="WeekDays" asp-action="Index">Dias</a>
-                <a class="nav-link text-light" asp-area="" asp-controller="Schedules" asp-action="Index">Horários</a>
-                <a class="nav-link text-light" asp-area="" asp-controller="Congregations" asp-action="Index">Congregações</a>
-                <a class="nav-link text-light" asp-area="" asp-controller="Circuits" asp-action="Index">Circuitos</a>
-                <a class="nav-link text-light" asp-area="" asp-controller="Points" asp-action="Index">Pontos</a>
-                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="PointsCarouselView">PontosCarousel</a>
-            </div>
+
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Gerenciar Usuários
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <a class="dropdown-item" asp-area="" asp-controller="Users" asp-action="Index">Usuários</a>
+                            <a class="dropdown-item" asp-area="" asp-controller="UsersSchedules" asp-action="Index"> Horários e Dias</a>
+                        </div>
+                    </div>
+                    &nbsp;
+                    &nbsp;
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Gerenciar Pontos e Horários
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <a class="dropdown-item" asp-area="" asp-controller="Schedules" asp-action="Index"> Horários e Dias</a>
+                            <a class="dropdown-item" asp-area="" asp-controller="Points" asp-action="Index"> Pontos</a>
+                        </div>
+                    </div>
+
+                     @* <a class="nav-link text-light" asp-area="" asp-controller="Users" asp-action="Index">Usuários</a> *@
+
+                  
+
+                    <a class="nav-link text-light" asp-area="" asp-controller="Congregations" asp-action="Index">Congregações</a>
+                    <a class="nav-link text-light" asp-area="" asp-controller="Circuits" asp-action="Index">Circuitos</a>
+                    @* <a class="nav-link text-light" asp-area="" asp-controller="Points" asp-action="Index">Pontos</a> *@
+
+                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="PointsCarouselView">PontosCarousel</a>
+
+
+                </div>
         </nav>
     </header>
     <div class="container">

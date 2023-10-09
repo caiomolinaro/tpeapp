@@ -35,7 +35,7 @@ namespace tpeapp.Migrations
 
                     b.HasKey("CircuitId");
 
-                    b.ToTable("Circuits");
+                    b.ToTable("Circuits", (string)null);
                 });
 
             modelBuilder.Entity("tpeapp.Models.CongregationsModel", b =>
@@ -59,7 +59,7 @@ namespace tpeapp.Migrations
 
                     b.HasIndex("CircuitsCircuitId");
 
-                    b.ToTable("Congregations");
+                    b.ToTable("Congregations", (string)null);
                 });
 
             modelBuilder.Entity("tpeapp.Models.PointsModel", b =>
@@ -73,20 +73,74 @@ namespace tpeapp.Migrations
                     b.Property<string>("PointName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("SchedulesId")
+                        .HasColumnType("int");
+
                     b.HasKey("PointId");
 
-                    b.ToTable("Points");
+                    b.HasIndex("SchedulesId");
+
+                    b.ToTable("Points", (string)null);
                 });
 
-            modelBuilder.Entity("tpeapp.Models.PrivilegesModel", b =>
+            modelBuilder.Entity("tpeapp.Models.SchedulesModel", b =>
                 {
-                    b.Property<int>("PrivilegesId")
+                    b.Property<int>("SchedulesId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PrivilegesId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SchedulesId"));
+
+                    b.Property<bool>("Friday")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Monday")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Saturday")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SchedulesName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SchedulesNamePrincipal")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Sunday")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Thursday")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Tuesday")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Wednesday")
+                        .HasColumnType("bit");
+
+                    b.HasKey("SchedulesId");
+
+                    b.ToTable("Schedules", (string)null);
+                });
+
+            modelBuilder.Entity("tpeapp.Models.UsersModel", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
+
+                    b.Property<int>("CongregationId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CongregationsCongregationId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsElder")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsMan")
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsMinisterialServant")
@@ -104,43 +158,8 @@ namespace tpeapp.Migrations
                     b.Property<bool>("IsPublisher")
                         .HasColumnType("bit");
 
-                    b.HasKey("PrivilegesId");
-
-                    b.ToTable("Privileges");
-                });
-
-            modelBuilder.Entity("tpeapp.Models.SchedulesModel", b =>
-                {
-                    b.Property<int>("SchedulesId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SchedulesId"));
-
-                    b.Property<string>("SchedulesName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("SchedulesId");
-
-                    b.ToTable("Schedules");
-                });
-
-            modelBuilder.Entity("tpeapp.Models.UsersModel", b =>
-                {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
-
-                    b.Property<bool>("IsMan")
-                        .HasColumnType("bit");
-
                     b.Property<bool>("IsWoman")
                         .HasColumnType("bit");
-
-                    b.Property<DateTime>("UserBirthDate")
-                        .HasColumnType("Date");
 
                     b.Property<string>("UserEmail")
                         .IsRequired()
@@ -159,16 +178,18 @@ namespace tpeapp.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Users");
+                    b.HasIndex("CongregationsCongregationId");
+
+                    b.ToTable("Users", (string)null);
                 });
 
-            modelBuilder.Entity("tpeapp.Models.WeekDaysModel", b =>
+            modelBuilder.Entity("tpeapp.Models.UsersSchedulesModel", b =>
                 {
-                    b.Property<int>("WeekDayId")
+                    b.Property<int>("SchedulesId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WeekDayId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SchedulesId"));
 
                     b.Property<bool>("Friday")
                         .HasColumnType("bit");
@@ -179,6 +200,9 @@ namespace tpeapp.Migrations
                     b.Property<bool>("Saturday")
                         .HasColumnType("bit");
 
+                    b.Property<string>("SchedulesName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("Sunday")
                         .HasColumnType("bit");
 
@@ -188,12 +212,20 @@ namespace tpeapp.Migrations
                     b.Property<bool>("Tuesday")
                         .HasColumnType("bit");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UsersUserId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("Wednesday")
                         .HasColumnType("bit");
 
-                    b.HasKey("WeekDayId");
+                    b.HasKey("SchedulesId");
 
-                    b.ToTable("WeekDays");
+                    b.HasIndex("UsersUserId");
+
+                    b.ToTable("UsersSchedules", (string)null);
                 });
 
             modelBuilder.Entity("tpeapp.Models.CongregationsModel", b =>
@@ -205,9 +237,53 @@ namespace tpeapp.Migrations
                     b.Navigation("Circuits");
                 });
 
+            modelBuilder.Entity("tpeapp.Models.PointsModel", b =>
+                {
+                    b.HasOne("tpeapp.Models.SchedulesModel", "Schedules")
+                        .WithMany("Points")
+                        .HasForeignKey("SchedulesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Schedules");
+                });
+
+            modelBuilder.Entity("tpeapp.Models.UsersModel", b =>
+                {
+                    b.HasOne("tpeapp.Models.CongregationsModel", "Congregations")
+                        .WithMany("Users")
+                        .HasForeignKey("CongregationsCongregationId");
+
+                    b.Navigation("Congregations");
+                });
+
+            modelBuilder.Entity("tpeapp.Models.UsersSchedulesModel", b =>
+                {
+                    b.HasOne("tpeapp.Models.UsersModel", "Users")
+                        .WithMany("UsersSchedules")
+                        .HasForeignKey("UsersUserId");
+
+                    b.Navigation("Users");
+                });
+
             modelBuilder.Entity("tpeapp.Models.CircuitsModel", b =>
                 {
                     b.Navigation("Congregations");
+                });
+
+            modelBuilder.Entity("tpeapp.Models.CongregationsModel", b =>
+                {
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("tpeapp.Models.SchedulesModel", b =>
+                {
+                    b.Navigation("Points");
+                });
+
+            modelBuilder.Entity("tpeapp.Models.UsersModel", b =>
+                {
+                    b.Navigation("UsersSchedules");
                 });
 #pragma warning restore 612, 618
         }

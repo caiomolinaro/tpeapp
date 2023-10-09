@@ -13,12 +13,12 @@ namespace tpeapp.Models
         [Display(Name = "Nome da congregação")]
         public string CongregationName { get; set; }
 
-        [Display(Name = "Nome do circuito")]
+        [Display(Name = "Circuito")]
         public int CircuitId { get; set; }
 
         public virtual CircuitsModel Circuits { get; set; }
 
-        //ENTENDER PQ NA VIEW ELE NÃO DEIXA SELECIONAR O NOME DO CIRCUITO
-
+        public List<UsersModel> Users { get; set; }
+         
     }
 }

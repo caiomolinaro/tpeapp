@@ -22,18 +22,18 @@ namespace tpeapp.Controllers
         // GET: Schedules
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Hours.ToListAsync());
+              return View(await _context.SchedulesModel.ToListAsync());
         }
 
         // GET: Schedules/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Hours == null)
+            if (id == null || _context.SchedulesModel == null)
             {
                 return NotFound();
             }
 
-            var schedulesModel = await _context.Hours
+            var schedulesModel = await _context.SchedulesModel
                 .FirstOrDefaultAsync(m => m.SchedulesId == id);
             if (schedulesModel == null)
             {
@@ -54,7 +54,7 @@ namespace tpeapp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("SchedulesId,SchedulesName")] SchedulesModel schedulesModel)
+        public async Task<IActionResult> Create([Bind("SchedulesId,SchedulesNamePrincipal,SchedulesName,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday")] SchedulesModel schedulesModel)
         {
             if (ModelState.IsValid)
             {
@@ -68,12 +68,12 @@ namespace tpeapp.Controllers
         // GET: Schedules/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Hours == null)
+            if (id == null || _context.SchedulesModel == null)
             {
                 return NotFound();
             }
 
-            var schedulesModel = await _context.Hours.FindAsync(id);
+            var schedulesModel = await _context.SchedulesModel.FindAsync(id);
             if (schedulesModel == null)
             {
                 return NotFound();
@@ -86,7 +86,7 @@ namespace tpeapp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("SchedulesId,SchedulesName")] SchedulesModel schedulesModel)
+        public async Task<IActionResult> Edit(int id, [Bind("SchedulesId,SchedulesNamePrincipal,SchedulesName,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday")] SchedulesModel schedulesModel)
         {
             if (id != schedulesModel.SchedulesId)
             {
@@ -119,12 +119,12 @@ namespace tpeapp.Controllers
         // GET: Schedules/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Hours == null)
+            if (id == null || _context.SchedulesModel == null)
             {
                 return NotFound();
             }
 
-            var schedulesModel = await _context.Hours
+            var schedulesModel = await _context.SchedulesModel
                 .FirstOrDefaultAsync(m => m.SchedulesId == id);
             if (schedulesModel == null)
             {
@@ -139,14 +139,14 @@ namespace tpeapp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Hours == null)
+            if (_context.SchedulesModel == null)
             {
-                return Problem("Entity set 'AppDbContext.Horarios'  is null.");
+                return Problem("Entity set 'AppDbContext.SchedulesModel'  is null.");
             }
-            var schedulesModel = await _context.Hours.FindAsync(id);
+            var schedulesModel = await _context.SchedulesModel.FindAsync(id);
             if (schedulesModel != null)
             {
-                _context.Hours.Remove(schedulesModel);
+                _context.SchedulesModel.Remove(schedulesModel);
             }
             
             await _context.SaveChangesAsync();
@@ -155,7 +155,7 @@ namespace tpeapp.Controllers
 
         private bool SchedulesModelExists(int id)
         {
-          return _context.Hours.Any(e => e.SchedulesId == id);
+          return _context.SchedulesModel.Any(e => e.SchedulesId == id);
         }
     }
 }

@@ -22,13 +22,31 @@
                 @Html.DisplayNameFor(model => model.IsWoman)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UserBirthDate)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.UserPhone)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.UserEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsPublisher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsPioneer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsMinisterialServant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsElder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsPioneerAndMinisterialServant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsPioneerAndElder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CongregationId)
             </th>
             <th></th>
         </tr>
@@ -46,13 +64,31 @@
                 @Html.DisplayFor(modelItem => item.IsWoman)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserBirthDate)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.UserPhone)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UserEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPublisher)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPioneer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsMinisterialServant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsElder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPioneerAndMinisterialServant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPioneerAndElder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CongregationId)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.UserId">Edit</a> |

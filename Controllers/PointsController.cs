@@ -22,7 +22,8 @@ namespace tpeapp.Controllers
         // GET: Points
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Points.ToListAsync());
+            var appDbContext = _context.Points.Include(p => p.Schedules);
+            return View(await appDbContext.ToListAsync());
         }
 
         // GET: Points/Details/5
@@ -34,6 +35,7 @@ namespace tpeapp.Controllers
             }
 
             var pointsModel = await _context.Points
+                .Include(p => p.Schedules)
                 .FirstOrDefaultAsync(m => m.PointId == id);
             if (pointsModel == null)
             {
@@ -46,6 +48,7 @@ namespace tpeapp.Controllers
         // GET: Points/Create
         public IActionResult Create()
         {
+            ViewData["SchedulesId"] = new SelectList(_context.SchedulesModel, "SchedulesId", "SchedulesId");
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace tpeapp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PointId,PointName")] PointsModel pointsModel)
+        public async Task<IActionResult> Create([Bind("PointId,PointName,SchedulesId")] PointsModel pointsModel)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +65,7 @@ namespace tpeapp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["SchedulesId"] = new SelectList(_context.SchedulesModel, "SchedulesId", "SchedulesId", pointsModel.SchedulesId);
             return View(pointsModel);
         }
 
@@ -78,6 +82,7 @@ namespace tpeapp.Controllers
             {
                 return NotFound();
             }
+            ViewData["SchedulesId"] = new SelectList(_context.SchedulesModel, "SchedulesId", "SchedulesId", pointsModel.SchedulesId);
             return View(pointsModel);
         }
 
@@ -86,7 +91,7 @@ namespace tpeapp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PointId,PointName")] PointsModel pointsModel)
+        public async Task<IActionResult> Edit(int id, [Bind("PointId,PointName,SchedulesId")] PointsModel pointsModel)
         {
             if (id != pointsModel.PointId)
             {
@@ -113,6 +118,7 @@ namespace tpeapp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["SchedulesId"] = new SelectList(_context.SchedulesModel, "SchedulesId", "SchedulesId", pointsModel.SchedulesId);
             return View(pointsModel);
         }
 
@@ -125,6 +131,7 @@ namespace tpeapp.Controllers
             }
 
             var pointsModel = await _context.Points
+                .Include(p => p.Schedules)
                 .FirstOrDefaultAsync(m => m.PointId == id);
             if (pointsModel == null)
             {
@@ -141,7 +148,7 @@ namespace tpeapp.Controllers
         {
             if (_context.Points == null)
             {
-                return Problem("Entity set 'AppDbContext.Pontos'  is null.");
+                return Problem("Entity set 'AppDbContext.Points'  is null.");
             }
             var pointsModel = await _context.Points.FindAsync(id);
             if (pointsModel != null)

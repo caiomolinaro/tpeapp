@@ -13,7 +13,31 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.SchedulesNamePrincipal)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.SchedulesName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Monday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tuesday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wednesday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Thursday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Friday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Saturday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sunday)
             </th>
             <th></th>
         </tr>
@@ -22,7 +46,31 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.SchedulesNamePrincipal)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.SchedulesName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tuesday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wednesday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thursday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Friday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Saturday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sunday)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.SchedulesId">Edit</a> |

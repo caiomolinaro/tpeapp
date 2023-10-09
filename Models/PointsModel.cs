@@ -13,5 +13,10 @@ namespace tpeapp.Models
         [Display(Name = "Nome do ponto")]
         public string PointName { get; set; }
 
+        [Display(Name = "Nome do horário")]
+        public int SchedulesId { get; set; }
+
+        [Display(Name = "Nome do horário")]
+        public virtual SchedulesModel Schedules { get; set; }
     }
 }
