@@ -37,10 +37,10 @@ namespace tpeapp.Models
         [Display(Name = "Email")]
         public string UserEmail { get; set; }
 
-        [Display(Name = "Publicador")]
+        [Display(Name = "Publicador(a)")]
         public bool IsPublisher { get; set; }
 
-        [Display(Name = "Pioneiro")]
+        [Display(Name = "Pioneiro(a)")]
         public bool IsPioneer { get; set; }
 
         [Display(Name = "Servo Ministerial")]
