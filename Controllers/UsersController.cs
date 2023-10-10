@@ -54,7 +54,7 @@ namespace tpeapp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserId,UserName,IsMan,IsWoman,UserPhone,UserEmail,IsPublisher,IsPioneer,IsMinisterialServant,IsElder,IsPioneerAndMinisterialServant,IsPioneerAndElder,CongregationId")] UsersModel usersModel)
+        public async Task<IActionResult> Create([Bind("UserId,UserName,IsMan,IsWoman,UserBirthDate,UserBaptismDate,UserPhone,UserEmail,IsPublisher,IsPioneer,IsMinisterialServant,IsElder,IsPioneerAndMinisterialServant,IsPioneerAndElder,CongregationId")] UsersModel usersModel)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace tpeapp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UserId,UserName,IsMan,IsWoman,UserPhone,UserEmail,IsPublisher,IsPioneer,IsMinisterialServant,IsElder,IsPioneerAndMinisterialServant,IsPioneerAndElder,CongregationId")] UsersModel usersModel)
+        public async Task<IActionResult> Edit(int id, [Bind("UserId,UserName,IsMan,IsWoman,UserBirthDate,UserBaptismDate,UserPhone,UserEmail,IsPublisher,IsPioneer,IsMinisterialServant,IsElder,IsPioneerAndMinisterialServant,IsPioneerAndElder,CongregationId")] UsersModel usersModel)
         {
             if (id != usersModel.UserId)
             {

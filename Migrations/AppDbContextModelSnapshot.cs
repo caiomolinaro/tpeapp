@@ -35,7 +35,7 @@ namespace tpeapp.Migrations
 
                     b.HasKey("CircuitId");
 
-                    b.ToTable("Circuits", (string)null);
+                    b.ToTable("Circuits");
                 });
 
             modelBuilder.Entity("tpeapp.Models.CongregationsModel", b =>
@@ -59,7 +59,7 @@ namespace tpeapp.Migrations
 
                     b.HasIndex("CircuitsCircuitId");
 
-                    b.ToTable("Congregations", (string)null);
+                    b.ToTable("Congregations");
                 });
 
             modelBuilder.Entity("tpeapp.Models.PointsModel", b =>
@@ -80,7 +80,7 @@ namespace tpeapp.Migrations
 
                     b.HasIndex("SchedulesId");
 
-                    b.ToTable("Points", (string)null);
+                    b.ToTable("Points");
                 });
 
             modelBuilder.Entity("tpeapp.Models.SchedulesModel", b =>
@@ -120,7 +120,7 @@ namespace tpeapp.Migrations
 
                     b.HasKey("SchedulesId");
 
-                    b.ToTable("Schedules", (string)null);
+                    b.ToTable("Schedules");
                 });
 
             modelBuilder.Entity("tpeapp.Models.UsersModel", b =>
@@ -161,6 +161,12 @@ namespace tpeapp.Migrations
                     b.Property<bool>("IsWoman")
                         .HasColumnType("bit");
 
+                    b.Property<DateTime>("UserBaptismDate")
+                        .HasColumnType("date");
+
+                    b.Property<DateTime>("UserBirthDate")
+                        .HasColumnType("date");
+
                     b.Property<string>("UserEmail")
                         .IsRequired()
                         .HasMaxLength(22)
@@ -180,7 +186,7 @@ namespace tpeapp.Migrations
 
                     b.HasIndex("CongregationsCongregationId");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("tpeapp.Models.UsersSchedulesModel", b =>
@@ -225,7 +231,7 @@ namespace tpeapp.Migrations
 
                     b.HasIndex("UsersUserId");
 
-                    b.ToTable("UsersSchedules", (string)null);
+                    b.ToTable("UsersSchedules");
                 });
 
             modelBuilder.Entity("tpeapp.Models.CongregationsModel", b =>

@@ -29,6 +29,16 @@
                 </label>
             </div>
             <div class="form-group">
+                <label asp-for="UserBirthDate" class="control-label"></label>
+                <input asp-for="UserBirthDate" class="form-control" />
+                <span asp-validation-for="UserBirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserBaptismDate" class="control-label"></label>
+                <input asp-for="UserBaptismDate" class="form-control" />
+                <span asp-validation-for="UserBaptismDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="UserPhone" class="control-label"></label>
                 <input asp-for="UserPhone" class="form-control" />
                 <span asp-validation-for="UserPhone" class="text-danger"></span>
