@@ -22,10 +22,10 @@
                 @Html.DisplayNameFor(model => model.IsWoman)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UserBirthDate)
+                Idade:
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UserBaptismDate)
+                Batismo:
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.UserPhone)
@@ -70,10 +70,32 @@
                 @Html.DisplayFor(modelItem => item.IsWoman)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserBirthDate)
+                   @{
+                        var birthDate = item.UserBirthDate;
+                        var todayBirth = DateOnly.FromDateTime(DateTime.Today);
+                        var ageBirth = todayBirth.Year - birthDate.Year;
+
+                        if (birthDate > todayBirth.AddYears(-ageBirth))
+                        {
+                            ageBirth--;
+                        }
+
+                        @ageBirth
+                    } Anos
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserBaptismDate)
+                    @{
+                        var dateBaptism = item.UserBaptismDate;
+                        var todayBaptism = DateOnly.FromDateTime(DateTime.Today);
+                        var ageBaptism = todayBaptism.Year - dateBaptism.Year;
+
+                        if (dateBaptism > todayBaptism.AddYears(-ageBaptism))
+                        {
+                            ageBaptism--;
+                        }
+
+                        @ageBaptism
+                    } Anos
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UserPhone)
