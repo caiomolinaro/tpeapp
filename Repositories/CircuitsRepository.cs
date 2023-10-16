@@ -13,6 +13,6 @@ namespace tpeapp.Repositories
             _dbContext = dbContext;
         }
 
-        public IEnumerable<CircuitsModel> Circuits => _dbContext.Circuits.Include(c => c.CircuitName);
+        public IEnumerable<CircuitsModel> Circuits => _dbContext.Circuits;
     }
 }

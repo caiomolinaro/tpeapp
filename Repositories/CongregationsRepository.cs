@@ -14,6 +14,6 @@ namespace tpeapp.Repositories
             _dbContext = dbContext;
         }
 
-        public IEnumerable<CongregationsModel> Congregations => _dbContext.Congregations.Include(c => c.CongregationName);
+        public IEnumerable<CongregationsModel> Congregations => _dbContext.Congregations.Include(c => c.Circuits);
     }
 }

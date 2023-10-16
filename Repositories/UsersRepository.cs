@@ -5,7 +5,7 @@ using tpeapp.Repositories.Interfaces;
 
 namespace tpeapp.Repositories
 {
-    public class UsersRepository : IUsersRepository
+    public class UsersRepository //: IUsersRepository
     {
         private readonly AppDbContext _dbContext;
 
@@ -14,6 +14,6 @@ namespace tpeapp.Repositories
             _dbContext = dbContext;
         }
 
-        public IEnumerable<UsersModel> Users => _dbContext.Users.Include(u => u.UserName);
+        //public IEnumerable<UsersModel> Users => _dbContext.Users.Include(u => u.UserName);
     }
 }

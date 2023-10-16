@@ -35,7 +35,7 @@ namespace tpeapp.Migrations
 
                     b.HasKey("CircuitId");
 
-                    b.ToTable("Circuits");
+                    b.ToTable("Circuits", (string)null);
                 });
 
             modelBuilder.Entity("tpeapp.Models.CongregationsModel", b =>
@@ -59,7 +59,7 @@ namespace tpeapp.Migrations
 
                     b.HasIndex("CircuitsCircuitId");
 
-                    b.ToTable("Congregations");
+                    b.ToTable("Congregations", (string)null);
                 });
 
             modelBuilder.Entity("tpeapp.Models.PointsModel", b =>
@@ -80,7 +80,7 @@ namespace tpeapp.Migrations
 
                     b.HasIndex("SchedulesId");
 
-                    b.ToTable("Points");
+                    b.ToTable("Points", (string)null);
                 });
 
             modelBuilder.Entity("tpeapp.Models.SchedulesModel", b =>
@@ -120,7 +120,7 @@ namespace tpeapp.Migrations
 
                     b.HasKey("SchedulesId");
 
-                    b.ToTable("Schedules");
+                    b.ToTable("Schedules", (string)null);
                 });
 
             modelBuilder.Entity("tpeapp.Models.UsersModel", b =>
@@ -186,7 +186,7 @@ namespace tpeapp.Migrations
 
                     b.HasIndex("CongregationsCongregationId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("tpeapp.Models.UsersSchedulesModel", b =>
@@ -231,7 +231,7 @@ namespace tpeapp.Migrations
 
                     b.HasIndex("UsersUserId");
 
-                    b.ToTable("UsersSchedules");
+                    b.ToTable("UsersSchedules", (string)null);
                 });
 
             modelBuilder.Entity("tpeapp.Models.CongregationsModel", b =>

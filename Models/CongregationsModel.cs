@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace tpeapp.Models
@@ -6,6 +7,11 @@ namespace tpeapp.Models
     [Table("Congregations")]
     public class CongregationsModel
     {
+        public CongregationsModel()
+        {
+            Users = new Collection<UsersModel>();  
+        }
+
         [Key]
         [Display(Name = "ID")]
         public int CongregationId { get; set; }
@@ -18,7 +24,7 @@ namespace tpeapp.Models
 
         public virtual CircuitsModel Circuits { get; set; }
 
-        public List<UsersModel> Users { get; set; }
+        public ICollection<UsersModel> Users { get; set; }
          
     }
 }

@@ -22,7 +22,8 @@ namespace tpeapp.Controllers
         // GET: Congregations
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Congregations.ToListAsync());
+            var appDbContext = _context.Congregations.Include(p => p.Circuits);
+            return View(await appDbContext.ToListAsync());
         }
 
         // GET: Congregations/Details/5
@@ -34,6 +35,7 @@ namespace tpeapp.Controllers
             }
 
             var congregationsModel = await _context.Congregations
+                .Include(p => p.Circuits)
                 .FirstOrDefaultAsync(m => m.CongregationId == id);
             if (congregationsModel == null)
             {
@@ -46,6 +48,7 @@ namespace tpeapp.Controllers
         // GET: Congregations/Create
         public IActionResult Create()
         {
+            ViewData["CircuitsId"] = new SelectList(_context.Congregations, "CircuitsId", "CircuitsId", "CircuitsName");
             return View();
         }
 
@@ -62,6 +65,7 @@ namespace tpeapp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CircuitsId"] = new SelectList(_context.Congregations, "CircuitsId", "CircuitsId", congregationsModel.CircuitId);
             return View(congregationsModel);
         }
 
@@ -78,6 +82,7 @@ namespace tpeapp.Controllers
             {
                 return NotFound();
             }
+            ViewData["CircuitsId"] = new SelectList(_context.Congregations, "CircuitsId", "CircuitsId", congregationsModel.CircuitId);
             return View(congregationsModel);
         }
 
@@ -113,6 +118,7 @@ namespace tpeapp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CircuitsId"] = new SelectList(_context.Congregations, "CircuitsId", "CircuitsId", congregationsModel.CircuitId);
             return View(congregationsModel);
         }
 

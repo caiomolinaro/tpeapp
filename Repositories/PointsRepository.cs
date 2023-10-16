@@ -5,7 +5,7 @@ using tpeapp.Repositories.Interfaces;
 
 namespace tpeapp.Repositories
 {
-    public class PointsRepository :IPointsRepository
+    public class PointsRepository // :IPointsRepository
     {
         private readonly AppDbContext _dbContext;
 
@@ -14,6 +14,6 @@ namespace tpeapp.Repositories
             _dbContext = dbContext;
         }
 
-        public IEnumerable<PointsModel> Points => _dbContext.Points.Include(c => c.PointName);
+       // public IEnumerable<PointsModel> Points => _dbContext.Points.Include(c => c.PointName);
     }
 }

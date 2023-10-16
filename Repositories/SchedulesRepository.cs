@@ -5,7 +5,7 @@ using tpeapp.Repositories.Interfaces;
 
 namespace tpeapp.Repositories
 {
-    public class SchedulesRepository : ISchedulesRepository
+    public class SchedulesRepository //: ISchedulesRepository
     {
         private readonly AppDbContext _dbContext;
 
@@ -14,6 +14,6 @@ namespace tpeapp.Repositories
             _dbContext = dbContext;
         }
 
-        public IEnumerable<SchedulesModel> Schedules => _dbContext.Schedules.Include(s => s.SchedulesName);
+        //public IEnumerable<SchedulesModel> Schedules => _dbContext.Schedules.Include(s => s.SchedulesName);
     }
 }

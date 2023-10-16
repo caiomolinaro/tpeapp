@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace tpeapp.Models
@@ -6,6 +7,11 @@ namespace tpeapp.Models
     [Table("Schedules")]
     public class SchedulesModel
     {
+        public SchedulesModel()
+        {
+            Points = new Collection<PointsModel>();
+        }
+
         [Key]
         [Display(Name = "ID")]
         public int SchedulesId { get; set; }
@@ -37,6 +43,6 @@ namespace tpeapp.Models
         [Display(Name = "Domingo")]
         public bool Sunday { get; set; }
 
-        public List<PointsModel> Points { get; set; }   
+        public ICollection<PointsModel> Points { get; set; }   
     }
 }
