@@ -14,6 +14,6 @@ namespace tpeapp.Repositories
             _dbContext = dbContext;
         }
 
-        public IEnumerable<SchedulesModel> Schedules => _dbContext.SchedulesModel.Include(s => s.SchedulesName);
+        public IEnumerable<SchedulesModel> Schedules => _dbContext.Schedules.Include(s => s.SchedulesName);
     }
 }

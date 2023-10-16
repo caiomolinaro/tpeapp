@@ -48,7 +48,7 @@ namespace tpeapp.Controllers
         // GET: Points/Create
         public IActionResult Create()
         {
-            ViewData["SchedulesId"] = new SelectList(_context.SchedulesModel, "SchedulesId", "SchedulesId");
+            ViewData["SchedulesId"] = new SelectList(_context.Schedules, "SchedulesId", "SchedulesId");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace tpeapp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SchedulesId"] = new SelectList(_context.SchedulesModel, "SchedulesId", "SchedulesId", pointsModel.SchedulesId);
+            ViewData["SchedulesId"] = new SelectList(_context.Schedules, "SchedulesId", "SchedulesId", pointsModel.SchedulesId);
             return View(pointsModel);
         }
 
@@ -82,7 +82,7 @@ namespace tpeapp.Controllers
             {
                 return NotFound();
             }
-            ViewData["SchedulesId"] = new SelectList(_context.SchedulesModel, "SchedulesId", "SchedulesId", pointsModel.SchedulesId);
+            ViewData["SchedulesId"] = new SelectList(_context.Schedules, "SchedulesId", "SchedulesId", pointsModel.SchedulesId);
             return View(pointsModel);
         }
 
@@ -118,7 +118,7 @@ namespace tpeapp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SchedulesId"] = new SelectList(_context.SchedulesModel, "SchedulesId", "SchedulesId", pointsModel.SchedulesId);
+            ViewData["SchedulesId"] = new SelectList(_context.Schedules, "SchedulesId", "SchedulesId", pointsModel.SchedulesId);
             return View(pointsModel);
         }
 

@@ -22,18 +22,18 @@ namespace tpeapp.Controllers
         // GET: Schedules
         public async Task<IActionResult> Index()
         {
-              return View(await _context.SchedulesModel.ToListAsync());
+              return View(await _context.Schedules.ToListAsync());
         }
 
         // GET: Schedules/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.SchedulesModel == null)
+            if (id == null || _context.Schedules == null)
             {
                 return NotFound();
             }
 
-            var schedulesModel = await _context.SchedulesModel
+            var schedulesModel = await _context.Schedules
                 .FirstOrDefaultAsync(m => m.SchedulesId == id);
             if (schedulesModel == null)
             {
@@ -68,12 +68,12 @@ namespace tpeapp.Controllers
         // GET: Schedules/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.SchedulesModel == null)
+            if (id == null || _context.Schedules == null)
             {
                 return NotFound();
             }
 
-            var schedulesModel = await _context.SchedulesModel.FindAsync(id);
+            var schedulesModel = await _context.Schedules.FindAsync(id);
             if (schedulesModel == null)
             {
                 return NotFound();
@@ -119,12 +119,12 @@ namespace tpeapp.Controllers
         // GET: Schedules/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.SchedulesModel == null)
+            if (id == null || _context.Schedules == null)
             {
                 return NotFound();
             }
 
-            var schedulesModel = await _context.SchedulesModel
+            var schedulesModel = await _context.Schedules
                 .FirstOrDefaultAsync(m => m.SchedulesId == id);
             if (schedulesModel == null)
             {
@@ -139,14 +139,14 @@ namespace tpeapp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.SchedulesModel == null)
+            if (_context.Schedules == null)
             {
                 return Problem("Entity set 'AppDbContext.SchedulesModel'  is null.");
             }
-            var schedulesModel = await _context.SchedulesModel.FindAsync(id);
+            var schedulesModel = await _context.Schedules.FindAsync(id);
             if (schedulesModel != null)
             {
-                _context.SchedulesModel.Remove(schedulesModel);
+                _context.Schedules.Remove(schedulesModel);
             }
             
             await _context.SaveChangesAsync();
@@ -155,7 +155,7 @@ namespace tpeapp.Controllers
 
         private bool SchedulesModelExists(int id)
         {
-          return _context.SchedulesModel.Any(e => e.SchedulesId == id);
+          return _context.Schedules.Any(e => e.SchedulesId == id);
         }
     }
 }
