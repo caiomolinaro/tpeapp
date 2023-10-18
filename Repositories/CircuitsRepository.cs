@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using tpeapp.Context;
+﻿using tpeapp.Context;
 using tpeapp.Models;
+using tpeapp.Repositories.Interfaces;
+
 
 namespace tpeapp.Repositories
 {

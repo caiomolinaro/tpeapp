@@ -141,7 +141,7 @@ namespace tpeapp.Controllers
         {
             if (_context.Schedules == null)
             {
-                return Problem("Entity set 'AppDbContext.SchedulesModel'  is null.");
+                return Problem("Entity set 'AppDbContext.Schedules'  is null.");
             }
             var schedulesModel = await _context.Schedules.FindAsync(id);
             if (schedulesModel != null)

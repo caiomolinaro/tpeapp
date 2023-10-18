@@ -25,7 +25,7 @@
                 Idade:
             </th>
             <th>
-                Batismo:
+               Batismo:
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.UserPhone)
@@ -70,9 +70,8 @@
                 @Html.DisplayFor(modelItem => item.IsWoman)
             </td>
             <td>
-
                 @* Birthdate calculator  *@
-                   @{
+                    @{
                         var birthDate = item.UserBirthDate;
                         var todayBirth = DateOnly.FromDateTime(DateTime.Today);
                         var ageBirth = todayBirth.Year - birthDate.Year;
@@ -87,8 +86,7 @@
                     } Anos
             </td>
             <td>
-
-                @* Baptismdate calculator *@
+                  @* Baptismdate calculator *@
                     @{
                         var dateBaptism = item.UserBaptismDate;
                         var todayBaptism = DateOnly.FromDateTime(DateTime.Today);
@@ -127,7 +125,7 @@
                 @Html.DisplayFor(modelItem => item.IsPioneerAndElder)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Congregations.CongregationName)
+                @Html.DisplayFor(modelItem => item.CongregationId)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.UserId">Edit</a> |

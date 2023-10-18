@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using tpeapp.Context;
+using tpeapp.Repositories;
+using tpeapp.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,14 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddControllersWithViews();
+
+//Inject repository
+builder.Services.AddScoped<ICircuitsRepository, CircuitsRepository>();
+builder.Services.AddScoped<ICongregationsRepository, CongregationsRepository>();
+builder.Services.AddScoped<IPointsRepository, PointsRepository>();
+builder.Services.AddScoped<ISchedulesRepository, SchedulesRepository>();
+builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+builder.Services.AddScoped<IUsersSchedulesRepository, UsersSchedulesRepository>();
 
 var app = builder.Build();
 
